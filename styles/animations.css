@@ -23,6 +23,9 @@
       animation-timeline: scroll(root block);
       animation-range-start: exit;
     }
+    
+  
+    
     @keyframes fade-in{
       from{
         scale: 1;

@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardTitle } from "@/components/ui/card";
 
 export default function WorkProcess() {
   return (
