@@ -23,25 +23,25 @@ export default function WorkProcess() {
 
         {/* Cards Grid */}
         <div className="grid md:grid-cols-3 gap-6">
-          <Card className="bg-zinc-700 border-0">
-            <CardHeader>
-              <div className="text-lg text-gray-400 ml-auto">01</div>
-              <CardTitle className="text-xl font-eraBold pt-10 text-white">UI/UX Designing</CardTitle>
-            </CardHeader>
+          <Card className="bg-zinc-700 border-0 cardImageBg">
+            <div className="flex flex-row justify-between align-middle space-y-1.5 p-6">
+              <CardTitle className="text-2xl font-eraBold  text-black">UI/UX Designing</CardTitle>
+              <CardTitle className="text-2xl font-era text-white bg-black px-1 rounded-sm">01</CardTitle>
+            </div>
           </Card>
 
-          <Card className="bg-zinc-700 border-0">
-            <CardHeader>
-              <div className="text-lg text-gray-400 ml-auto">02</div>
-              <CardTitle className="text-xl font-eraBold pt-10 text-white">Web Development</CardTitle>
-            </CardHeader>
+          <Card className="bg-zinc-700 border-0 cardImageBg">
+            <div className="flex flex-row justify-between space-y-1.5 p-6">
+              <CardTitle className="text-2xl font-eraBold  text-black">Web Development</CardTitle>
+              <CardTitle className="text-2xl font-era text-white bg-black px-1 rounded-sm">02</CardTitle>
+            </div>
           </Card>
 
-          <Card className="bg-zinc-700 border-0">
-            <CardHeader>
-              <div className="text-lg text-gray-400 ml-auto">03</div>
-              <CardTitle className="text-xl font-eraBold pt-10 text-white">SEO</CardTitle>
-            </CardHeader>
+          <Card className="bg-zinc-700 border-0 cardImageBg">
+            <div className="flex flex-row justify-between space-y-1.5 p-6">
+              <CardTitle className="text-2xl font-eraBold  text-black">SEO</CardTitle>
+              <CardTitle className="text-2xl font-era text-white bg-black px-1 rounded-sm">03</CardTitle>
+            </div>
           </Card>
         </div>
 

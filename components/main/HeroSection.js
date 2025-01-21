@@ -22,14 +22,14 @@ const HeroSection = () => {
     </p>
 
     {/* Hero Card */}
-    <div className="relative rounded-2xl overflow-hidden mb-12">
+    <div className="relative aspect-[3.4] rounded-2xl overflow-hidden mb-12 bg-black">
       <img
         src={"/images/1.jpg"}
         alt="Hero image"
         width={1200}
-        className="w-full aspect-[3.4] object-cover"
+        className="w-full object-cover heroImage"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center p-8">
+      <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center p-8 ">
         <div className="text-white text-left max-w-md">
           <p className="text-sm mb-4">Landmark Analytics</p>
           <h3 className="text-lg md:text-4xl font-era font-bold mb-6">
