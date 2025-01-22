@@ -1,8 +1,9 @@
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import Animation from "../animation";
 
 export default function WorkProcess() {
   return (
-    <div className="workProcess relative bg-black text-white overflow-hidden">
+    <div className="workProcess z-10 relative bg-black text-white overflow-hidden">
       <div className="container max-w-6xl mx-auto px-4 py-12 ">
         {/* Header */}
         <div className="space-y-1">
@@ -60,6 +61,7 @@ export default function WorkProcess() {
         {/* Description */}
         <p className="text-gray-400 max-w-6xl text-justify"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque quis veniam vel omnis? Commodi, maiores veritatis? Eum voluptate soluta ducimus delectus magni, suscipit sunt. Velit quod cum quae possimus tempore? adipisicing elit. Neque quis veniam vel omnis? Commodi, maiores veritatis?
         </p>
+        <Animation width="100px" height="100px" className="absolute left-0 walkImage bottom-40" theme="walkBlack"/>
       </div>
     </div>
   );

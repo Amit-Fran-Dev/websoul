@@ -1,0 +1,67 @@
+.box {
+    margin: auto;
+    width: 150px;
+    aspect-ratio: 1/1;
+    position: relative;
+    opacity: 0.3 !important;
+}
+
+.color,
+.dark,
+.white {
+    position: absolute;
+    width: 150px;
+    aspect-ratio: 1/1;
+    background-size: cover;
+    animation: danceAnimation 4s steps(8) infinite;
+}
+.white {
+    background: url("/images/danceWhite.png") 0 0;
+}
+
+.dark {
+    background: url("/images/danceBlack.png") 0 0;
+}
+
+.color {
+    background: url("/images/danceColor.png") 0 0;
+}
+
+@keyframes danceAnimation {
+    0%,
+    40% {
+        background-position: 0px 0;
+    }
+    60%,
+    100% {
+        background-position: 1200px 0;
+    }
+}
+.walkColor {
+    background: url("/images/walkColor.png") 0 0;
+}
+.walkBlack {
+    background: url("/images/walkBlack.png") 0 0;
+}
+
+.walkWhite {
+    background: url("/images/walkWhite.png") 0 0;
+}
+
+.walkBlack,
+.walkColor,
+.walkWhite {
+    position: absolute;
+    width: 150px;
+    aspect-ratio: 1/1;
+    background-size: cover;
+    animation: walkAnimation 1s steps(8) infinite reverse;
+}
+@keyframes walkAnimation {
+    from {
+        background-position: 0px 0;
+    }
+    to {
+        background-position: 1200px 0;
+    }
+}

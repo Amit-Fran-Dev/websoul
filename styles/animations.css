@@ -20,6 +20,12 @@
   animation-timeline: scroll(root block);
   animation-range-start: contain;
 }
+.walkImage {
+  animation: fade-in linear;
+  animation-timeline: scroll(root block);
+  animation-range: contain;
+  z-index: -11;
+}
 
 @keyframes fade-in {
   from {
@@ -30,6 +36,6 @@
   to {
     scale: 1;
     opacity: 1;
-    transform: translateX(-200px);
+    transform: translateX(50vw);
   }
 }
