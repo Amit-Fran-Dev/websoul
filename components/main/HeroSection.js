@@ -22,7 +22,7 @@ const HeroSection = () => {
     </p>
 
     {/* Hero Card */}
-    <div className="relative aspect-[3.1] rounded-2xl overflow-hidden mb-12 bg-black">
+    <div className="relative aspect-[4/2] md:aspect-[3.1] rounded-2xl overflow-hidden mb-12 bg-black">
       <img
         src={"/images/1.jpg"}
         alt="Hero image"

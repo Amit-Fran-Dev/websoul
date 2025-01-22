@@ -2,7 +2,7 @@ import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function WorkProcess() {
   return (
-    <div className=" bg-black text-white overflow-hidden">
+    <div className="workProcess relative bg-black text-white overflow-hidden">
       <div className="container max-w-6xl mx-auto px-4 py-12 ">
         {/* Header */}
         <div className="space-y-1">
