@@ -5,7 +5,6 @@ import styles from "./animation.module.css";
 const Animation = (props) => {
   const [stylesFrom, setstylesFrom] = useState(styles.walkWhite);
   const theme = props.theme;
-  const stylesheet = props.wh
   useLayoutEffect(() => {
     if(theme == 'color'){
       setstylesFrom(styles.color);
