@@ -10,8 +10,8 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12 text-center">
-    <h1 className="text-4xl md:text-4xl sm:text-3xl strokeText font-era  tracking-tight mb-0">
+    <div className="container max-w-6xl mx-auto px-4 py-12 text-center">
+    <h1 className="text-4xl md:text-1xl sm:text-3xl strokeText font-era  tracking-tight mb-0">
       WE PROVIDE ADVANCED
     </h1>
     <h2 className="font-eraBold text-4xl md:text-4xl sm:text-3xl font-black mb-2">
@@ -22,19 +22,18 @@ const HeroSection = () => {
     </p>
 
     {/* Hero Card */}
-    <div className="relative aspect-[3.4] rounded-2xl overflow-hidden mb-12 bg-black">
+    <div className="relative aspect-[3.1] rounded-2xl overflow-hidden mb-12 bg-black">
       <img
         src={"/images/1.jpg"}
         alt="Hero image"
-        width={1200}
-        className="w-full object-cover heroImage"
+        className="heroImage -translate-y-10 md:-translate-y-40"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center p-8 ">
         <div className="text-white text-left max-w-md">
           <p className="text-sm mb-4">Landmark Analytics</p>
-          <h3 className="text-lg md:text-4xl font-era font-bold mb-6">
+          <h4 className="text-lg md:text-1xl font-era font-bold mb-6">
             Space in typographical terms is usually
-          </h3>
+          </h4>
           <Button variant="secondary" size="lg">
             CALL NOW
           </Button>

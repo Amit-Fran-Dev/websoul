@@ -75,9 +75,9 @@ const tiers = [
 export default function PricingTable() {
   const [active, setActive] = useState(2);
   return (
-    <div className="full-w-6xl min-h-screen bg-gray-100 p-4 md:p-6 lg:p-8">
-      <div className="max-w-7xl mx-auto space-y-8">
-        <div className="text-left space-y-4">
+    <div className="container max-w-6xl mx-auto px-4 py-12">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-left">
           <h1 className="text-4xl font-bold font-eraBold">
             WEBSITE DESIGN PLAN
           </h1>
@@ -86,7 +86,7 @@ export default function PricingTable() {
             veniam vel omnis? Commodi, maiores veritatis?
           </p>
         </div>
-        <div className="flex mx-auto gap-4 ml-auto justify-center">
+        <div className="flex mx-auto gap-4 ml-auto justify-center flex-wrap">
           <button
             style={{ color: active === 1 ? "#ec8e00" : "initial", borderBottom: active === 1 ? "2px solid #ec8e00" : "none" }}
             onClick={() => setActive(1)}

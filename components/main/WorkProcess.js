@@ -1,9 +1,9 @@
-import { Card, CardTitle } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function WorkProcess() {
   return (
-    <div className=" bg-black text-white p-6 md:p-12">
-      <div className="max-w-6xl mx-auto space-y-12">
+    <div className=" bg-black text-white overflow-hidden">
+      <div className="container max-w-6xl mx-auto px-4 py-12 ">
         {/* Header */}
         <div className="space-y-1">
           <h2 className="text-4xl md:text-4xl sm:text-3xl strokeTextWhite font-eraBold  tracking-tight mb-0">
@@ -21,39 +21,40 @@ export default function WorkProcess() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
-          <Card className="bg-zinc-700 border-0 cardImageBg">
-            <div className="flex flex-row justify-between align-middle space-y-1.5 p-6">
-              <CardTitle className="text-2xl font-eraBold  text-black">UI/UX Designing</CardTitle>
-              <CardTitle className="text-2xl font-era text-white bg-black px-1 rounded-sm">01</CardTitle>
-            </div>
+        <div className="grid md:grid-cols-3 gap-6 mt-16">
+          <Card className="bg-zinc-700 border-0">
+            <CardHeader>
+            <div className="text-2xl text-white px-1 ml-auto mb-10">01</div>
+              <CardTitle className="text-2xl font-eraBold  text-white">UI/UX Designing</CardTitle>
+            </CardHeader>
           </Card>
 
-          <Card className="bg-zinc-700 border-0 cardImageBg">
-            <div className="flex flex-row justify-between space-y-1.5 p-6">
-              <CardTitle className="text-2xl font-eraBold  text-black">Web Development</CardTitle>
-              <CardTitle className="text-2xl font-era text-white bg-black px-1 rounded-sm">02</CardTitle>
-            </div>
+          <Card className="bg-zinc-700 border-0">
+            <CardHeader>
+            <div className="text-2xl text-white px-1 ml-auto mb-10">02</div>
+              <CardTitle className="text-2xl font-eraBold  text-white">Web Development</CardTitle>
+            </CardHeader>
           </Card>
 
-          <Card className="bg-zinc-700 border-0 cardImageBg">
-            <div className="flex flex-row justify-between space-y-1.5 p-6">
-              <CardTitle className="text-2xl font-eraBold  text-black">SEO</CardTitle>
-              <CardTitle className="text-2xl font-era text-white bg-black px-1 rounded-sm">03</CardTitle>
-            </div>
+          <Card className="bg-zinc-700 border-0">
+            <CardHeader>
+            <div className="text-2xl text-white px-1 ml-auto mb-10">03</div>
+              <CardTitle className="text-2xl font-eraBold  text-white">SEO</CardTitle>
+            </CardHeader>
           </Card>
         </div>
 
         {/* CTA Button */}
-        <div>
+        <div className="relative customBtnRounded rounded-full my-8 border-2 font-era bg-white text-black transition-colors">
           <a
             href="#"
             variant="none"
             size="lg"
-            className="rounded-full customBtnRounded border-2 font-era hover:bg-white hover:text-black transition-colors"
+            className=""
           >
             LET&apos;S START
           </a>
+          <div className="customBtnRoundedAnime"></div>
         </div>
 
         {/* Description */}

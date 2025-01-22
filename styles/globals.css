@@ -83,6 +83,7 @@ body {
   }
   body {
     /* @apply bg-background text-foreground; */
+    overflow-x: hidden;
   }
 }
 
@@ -132,10 +133,30 @@ body {
 .customBtnRounded{
   width: 80px;
   height: 80px;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  mix-blend-mode:difference;
+}
+
+.customBtnRoundedAnime {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0px;
+  aspect-ratio: 1/1;
+  /* background:radial-gradient(#e69706,#e69706); */
+  background-color: #f9ffa5;
+  border-radius: 50%;
+  transition: width 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.customBtnRounded:has(a:hover) .customBtnRoundedAnime {
+  width: 2000px;
 }
 
 
@@ -152,8 +173,31 @@ body {
 
 .cardImageBg{
   background:url("/svg/white.svg");
-  background-repeat: no-repeat;
   border-radius: 0;
   background-position: center;
   background-size: contain;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem) !important;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4.5vw, 2.5rem) !important;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 4vw, 2rem) !important;
+}
+
+h4 {
+  font-size: clamp(1.25rem, 3.5vw, 1.75rem) !important;
+}
+
+h5 {
+  font-size: clamp(1rem, 3vw, 1.5rem) !important;
+}
+
+h6 {
+  font-size: clamp(0.875rem, 2.5vw, 1.25rem) !important;
 }

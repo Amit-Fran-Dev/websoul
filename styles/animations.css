@@ -1,40 +1,35 @@
+.heroImage {
+  width: 100%;
+  animation: fade-out linear;
+  animation-timeline: scroll(root block);
+  animation-range: exit;
+}
+@keyframes fade-out {
+  from {
+    scale: 1;
+    filter:saturate(100%) opacity(1);
+  }
+  to {
+    scale: 2;
+    filter:saturate(0%) opacity(0);
+    transform: translateY(-300px);
+  }
+}
+.cardImageBg {
+  animation: fade-in linear;
+  animation-timeline: scroll(root block);
+  animation-range-start: contain;
+}
 
-.heroImage{
-    animation:fade-out linear;
-    animation-timeline: scroll(root block);
-    animation-range-start: exit;
-    transform: translateY(-200px);
+@keyframes fade-in {
+  from {
+    scale: 1;
+    opacity: 1;
+    transform: translateX(0);
   }
-  @keyframes fade-out{
-    from{
-      scale: 1;
-      opacity: 1;
-      transform: translateY(-200px);
-    }
-    to{
-      scale: 2;
-      opacity: -5;
-      background-position: bottom;
-      transform: translateY(-900px);
-    }
+  to {
+    scale: 1;
+    opacity: 1;
+    transform: translateX(-200px);
   }
-  .cardImageBg{
-      animation:fade-in linear;
-      animation-timeline: scroll(root block);
-      animation-range-start: exit;
-    }
-    
-  
-    
-    @keyframes fade-in{
-      from{
-        scale: 1;
-        opacity: 1;
-        transform: translateX(200px);
-      }
-      to{
-        scale: 1;
-        opacity: 1;
-        transform: translateX(-200px);
-      }
-    }
+}
