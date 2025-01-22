@@ -86,7 +86,7 @@ export default function PricingTable() {
             veniam vel omnis? Commodi, maiores veritatis?
           </p>
         </div>
-        <div className="flex mx-auto gap-4 ml-auto justify-center flex-wrap">
+        <div className="flex mx-auto gap-4 ml-auto my-10 justify-center flex-wrap">
           <button
             style={{ color: active === 1 ? "#ec8e00" : "initial", borderBottom: active === 1 ? "2px solid #ec8e00" : "none" }}
             onClick={() => setActive(1)}
