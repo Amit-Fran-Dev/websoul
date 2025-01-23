@@ -11,9 +11,9 @@ export default function WorkProcess() {
             STEPS
           </h2>
           <div className="space-y-1 flex gap-2">
-            <h3 className="text-3x font-eraBold md:text-4xl font-bold tracking-tighter">
+            <h2 className="text-4xl md:text-4xl sm:text-3xl font-eraBold">
               WE DO
-            </h3>
+            </h2>
             <span>
               <p className="text-xs font-era text-gray-50">WORK</p>
               <p className="text-xs font-era text-gray-50"> PROCESS</p>
