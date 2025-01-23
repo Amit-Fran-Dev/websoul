@@ -1,11 +1,11 @@
 'use client'
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from "./animation.module.css";
 
 const Animation = (props) => {
   const [stylesFrom, setstylesFrom] = useState(styles.walkWhite);
   const theme = props.theme;
-  useLayoutEffect(() => {
+  useEffect(() => {
     if(theme == 'color'){
       setstylesFrom(styles.color);
     }

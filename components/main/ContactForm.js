@@ -1,14 +1,21 @@
-"use client"
+"use client";
 
-import { useState } from "react"
+import { useState } from "react";
 // import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
+import { useForm } from "react-hook-form";
 // import * as z from "zod"
 
-import { Button } from "@/components/ui/button"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 // import { toast } from "@/components/ui/use-toast"
 
 // const formSchema = z.object({
@@ -27,7 +34,7 @@ import { Textarea } from "@/components/ui/textarea"
 // })
 
 export default function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm({
     // resolver: zodResolver(formSchema),
@@ -37,10 +44,10 @@ export default function ContactForm() {
     //   contactNumber: "",
     //   message: "",
     // },
-  })
+  });
 
-  async function onSubmit(values) {
-    setIsSubmitting(true)
+  async function onSubmit() {
+    setIsSubmitting(true);
     // try {
     //   // Here you would typically send the form data to your server
     //   await new Promise((resolve) => setTimeout(resolve, 1000)) // Simulate API call
@@ -61,12 +68,13 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="w-full max-w-xl p-8 bg-white rounded-lg shadow-sm">
-        <div className="space-y-2 text-center mb-8">
-          <h1 className="text-3xl font-bold tracking-tight">CONNECT WITH US</h1>
+    <div className="continer z-10 relative bg-white py-10 overflow-hidden">
+      <div style={{background:'#e6e6faf1'}} className="max-w-xl mx-auto col-span-4 p-8 rounded-lg shadow-sm">
+        <div className=" text-center mb-8">
+          <h1 className="text-3xl font-eraBold">CONNECT WITH US</h1>
           <p className="text-muted-foreground">
-            We would like to work for you. Believe me this will the best platform for your business.
+            We would like to work for you. Believe me this will the best
+            platform for your business.
           </p>
         </div>
 
@@ -93,7 +101,10 @@ export default function ContactForm() {
                 <FormItem>
                   <FormLabel>EMAIL</FormLabel>
                   <FormControl>
-                    <Input placeholder="Provide Your Email Address" {...field} />
+                    <Input
+                      placeholder="Provide Your Email Address"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -107,7 +118,10 @@ export default function ContactForm() {
                 <FormItem>
                   <FormLabel>CONTACT NUMBER</FormLabel>
                   <FormControl>
-                    <Input placeholder="Your Contact / Phone Number" {...field} />
+                    <Input
+                      placeholder="Your Contact / Phone Number"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -132,13 +146,28 @@ export default function ContactForm() {
               )}
             />
 
-            <Button type="submit" className="w-full bg-black text-white hover:bg-gray-800" disabled={isSubmitting}>
+            <Button
+              type="submit"
+              className="w-full bg-black text-white hover:bg-gray-800"
+              disabled={isSubmitting}
+            >
               {isSubmitting ? "Submitting..." : "SUBMIT"}
             </Button>
           </form>
         </Form>
       </div>
+      <video
+          // tabindex="-1"
+          id="vjs_video_3_html5_api"
+          className="videoContact col-span-2 hidden sm:block"
+          loop={true}
+          muted="muted"
+          autoplay=""
+          // src="https://cdn.pixabay.com/video/2022/09/30/133081-755697272_tiny.mp4"
+          // src="https://cdn.pixabay.com/video/2020/12/03/58201-487176833_tiny.mp4"
+          src="https://cdn.pixabay.com/video/2022/06/22/121785-724719741_tiny.mp4"
+          controls={false}
+        ></video>
     </div>
-  )
+  );
 }
-
