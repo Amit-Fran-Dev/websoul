@@ -10,7 +10,7 @@ import Footer from "@/components/main/Footer";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen body">
+    <div className="min-h-screen font-nas tracking-wider  body">
      <Nav/>
      <HeroSection/>
      <WorkProcess/>

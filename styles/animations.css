@@ -39,3 +39,18 @@
     transform: translateX(50vw);
   }
 }
+
+/* .customBtnRoundedAnime{
+  animation: scale-up linear;
+  animation-timeline: scroll(root block);
+  animation-range-start: exit;
+}
+
+@keyframes scale-up {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 5000px;
+  }
+} */

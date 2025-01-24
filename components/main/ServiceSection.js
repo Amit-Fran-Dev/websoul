@@ -23,7 +23,7 @@ export default function ServicesSection() {
   return (
     <div className="container max-w-6xl px-6 py-12">
       <div className="text-right mb-16">
-        <h2 className="text-3xl md:text-4xl font-eraBold font-bold mb-4">
+        <h2 className="text-3xl md:text-4xl font-eraBold font-bold mb-2">
           OUR SERVICES
         </h2>
         <p className="text-black">

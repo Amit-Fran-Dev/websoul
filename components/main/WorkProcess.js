@@ -7,7 +7,7 @@ export default function WorkProcess() {
       <div className="container max-w-6xl mx-auto px-4 py-12 ">
         {/* Header */}
         <div className="space-y-1">
-          <h2 className="text-4xl md:text-4xl sm:text-3xl strokeTextWhite font-eraBold  tracking-tight mb-0">
+          <h2 className="text-4xl md:text-4xl sm:text-3xl strokeTextWhite font-eraBold mb-0">
             STEPS
           </h2>
           <div className="space-y-1 flex gap-2">
@@ -26,21 +26,21 @@ export default function WorkProcess() {
           <Card className="bg-zinc-700 border-0">
             <CardHeader>
             <div className="text-2xl text-white px-1 ml-auto mb-10">01</div>
-              <CardTitle className="text-2xl font-eraBold  text-white">UI/UX Designing</CardTitle>
+              <CardTitle className="tracking-wider text-2xl font-eraBold  text-white">UI/UX Designing</CardTitle>
             </CardHeader>
           </Card>
 
           <Card className="bg-zinc-700 border-0">
             <CardHeader>
             <div className="text-2xl text-white px-1 ml-auto mb-10">02</div>
-              <CardTitle className="text-2xl font-eraBold  text-white">Web Development</CardTitle>
+              <CardTitle className="tracking-wider text-2xl font-eraBold  text-white">Web Development</CardTitle>
             </CardHeader>
           </Card>
 
           <Card className="bg-zinc-700 border-0">
             <CardHeader>
             <div className="text-2xl text-white px-1 ml-auto mb-10">03</div>
-              <CardTitle className="text-2xl font-eraBold  text-white">SEO</CardTitle>
+              <CardTitle className="tracking-wider text-2xl font-eraBold  text-white">SEO</CardTitle>
             </CardHeader>
           </Card>
         </div>

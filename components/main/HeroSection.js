@@ -11,9 +11,9 @@ import { Button } from "@/components/ui/button";
 const HeroSection = () => {
   return (
     <div className="container max-w-6xl mx-auto px-4 py-12 text-center">
-    <h1 className="text-4xl md:text-1xl sm:text-3xl strokeText font-era  tracking-tight mb-0">
+    <h2 className="text-4xl md:text-1xl sm:text-3xl strokeText font-scollar mb-0">
       WE PROVIDE ADVANCED
-    </h1>
+    </h2>
     <h2 className="font-eraBold text-4xl md:text-4xl sm:text-3xl font-black mb-2">
       WEB DESIGN SERVICE IN RANCHI
     </h2>

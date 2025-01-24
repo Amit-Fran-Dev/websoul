@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "era-itc-demi";
+    src: url("/assets/fonts/era-itc-demi.ttf");
+}
+
+@font-face {
+    font-family: "era-itc-demi";
+    src: url("/fonts/eras-itc-demi.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "era-itc-demi-bold";
+    src: url("/fonts/ITC Eras Bold.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "metrica";
+    src: url("/fonts/Metricas V2.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "scollar";
+    src: url("/fonts/SCOLLAR - FREE FOR PERSONAL.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: "nasBold";
+    src: url("/fonts/NasionalSansBold-woxB3.ttf") format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "nas";
+    src: url("/fonts/NasionalSansSemibold-7O36P.ttf") format("truetype");
+    font-weight: normal;
+}
+

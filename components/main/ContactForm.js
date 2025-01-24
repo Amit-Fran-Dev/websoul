@@ -68,10 +68,10 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="continer z-10 relative bg-white py-10 overflow-hidden">
-      <div style={{background:'#e6e6faf1'}} className="max-w-xl mx-auto col-span-4 p-8 rounded-lg shadow-sm">
-        <div className=" text-center mb-8">
-          <h1 className="text-3xl font-eraBold">CONNECT WITH US</h1>
+    <div className="continer z-10 relative bg-white py-10 px-6 overflow-hidden">
+      <div style={{background:'#e6e6fadd',backdropFilter: 'blur(6px)'}} className="max-w-sm mx-auto p-8 rounded-lg shadow-sm">
+        <div className="mb-8">
+          <h3 className="text-3xl font-eraBold">CONNECT WITH US</h3>
           <p className="text-muted-foreground">
             We would like to work for you. Believe me this will the best
             platform for your business.
@@ -148,7 +148,7 @@ export default function ContactForm() {
 
             <Button
               type="submit"
-              className="w-full bg-black text-white hover:bg-gray-800"
+              className="w-full font-eraBold bg-black text-white hover:bg-gray-800"
               disabled={isSubmitting}
             >
               {isSubmitting ? "Submitting..." : "SUBMIT"}
@@ -159,7 +159,7 @@ export default function ContactForm() {
       <video
           // tabindex="-1"
           id="vjs_video_3_html5_api"
-          className="videoContact col-span-2 hidden sm:block"
+          className="videoContact"
           loop={true}
           muted="muted"
           autoplay=""
