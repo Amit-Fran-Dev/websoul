@@ -22,7 +22,7 @@ const HeroSection = () => {
     </p>
 
     {/* Hero Card */}
-    <div className="relative aspect-[4/2] md:aspect-[3.1] rounded-2xl overflow-hidden mb-12 bg-black">
+    <div className="relative aspect-[4/2] md:aspect-[3.1] rounded-2xl overflow-hidden mb-4 bg-black">
       <img
         src={"/images/1.jpg"}
         alt="Hero image"
@@ -42,12 +42,12 @@ const HeroSection = () => {
     </div>
 
     {/* Features */}
-    <div className="flex flex-wrap justify-center gap-4 mb-16">
-      <Feature icon={<MessageCircle />} text="Live Chatting" />
-      <Feature icon={<Zap />} text="Light Speed" />
-      <Feature icon={<Smartphone />} text="Responsive Design" />
-      <Feature icon={<CreditCard />} text="Payment Gateway" />
-      <Feature icon={<Clock />} text="24x7 Support" />
+    <div className="flex buttonGroupSt z-10 bg-white rounded-full flex-wrap relative font-sans font-bold justify-between gap-2 mb-20">
+      <Feature icon={<MessageCircle strokeWidth={1.5} />} text="Live Chatting" />
+      <Feature icon={<Zap strokeWidth={1.5} />} text="Light Speed" />
+      <Feature icon={<Smartphone strokeWidth={1.5} />} text="Responsive Design" />
+      <Feature icon={<CreditCard strokeWidth={1.5} />} text="Payment Gateway" />
+      <Feature icon={<Clock strokeWidth={1.5} />} text="24x7 Support" />
     </div>
 
     {/* Guarantee Section */}
@@ -83,9 +83,9 @@ export default HeroSection
 
 function Feature({ icon, text }) {
     return (
-      <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-5 py-2">
+      <div className="flex hover:bg-black hover:text-white cursor-pointer bg-white rounded-full items-center gap-2 text-black px-5 py-2">
         {icon}
-        <span className="text-sm font-medium">{text}</span>
+        <span className="text-sm font-medium hidden md:block">{text}</span>
       </div>
     );
   }

@@ -166,8 +166,14 @@ export default function ContactForm() {
           // src="https://cdn.pixabay.com/video/2022/09/30/133081-755697272_tiny.mp4"
           // src="https://cdn.pixabay.com/video/2020/12/03/58201-487176833_tiny.mp4"
           src="https://cdn.pixabay.com/video/2022/06/22/121785-724719741_tiny.mp4"
+          // src="https://cdn.pixabay.com/video/2022/11/11/138553-769988105_tiny.mp4"
           controls={false}
         ></video>
+        {/* <img
+            className="videoContact"
+            src="/bg.gif"
+            controls={false}
+          /> */}
     </div>
   );
 }

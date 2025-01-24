@@ -6,11 +6,11 @@ export default function WorkProcess() {
     <div className="workProcess z-10 relative bg-black text-white overflow-hidden">
       <div className="container max-w-6xl mx-auto px-4 py-12 ">
         {/* Header */}
-        <div className="space-y-1">
+        <div className="">
           <h2 className="text-4xl md:text-4xl sm:text-3xl strokeTextWhite font-eraBold mb-0">
             STEPS
           </h2>
-          <div className="space-y-1 flex gap-2">
+          <div className="flex gap-2">
             <h2 className="text-4xl md:text-4xl sm:text-3xl font-eraBold">
               WE DO
             </h2>
