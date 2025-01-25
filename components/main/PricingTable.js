@@ -75,7 +75,7 @@ const tiers = [
 export default function PricingTable() {
   const [active, setActive] = useState(2);
   return (
-    <div className="container max-w-6xl mx-auto px-4 py-12">
+    <div id="pricing" className="container max-w-6xl mx-auto px-4 py-12">
       <div className="max-w-6xl mx-auto">
         <div className="text-left">
           <h1 className="text-4xl font-bold font-eraBold">

@@ -3,7 +3,7 @@ import Animation from "../animation";
 
 export default function WorkProcess() {
   return (
-    <div className="workProcess z-10 relative bg-black text-white overflow-hidden">
+    <div id="steps" className="workProcess z-10 relative bg-black text-white overflow-hidden">
       <div className="container max-w-6xl mx-auto px-4 py-12 ">
         {/* Header */}
         <div className="">
@@ -48,7 +48,7 @@ export default function WorkProcess() {
         {/* CTA Button */}
         <div className="relative customBtnRounded rounded-full my-8 border-2 font-era bg-white text-black transition-colors">
           <a
-            href="#"
+            href="#footer"
             variant="none"
             size="lg"
             className=""

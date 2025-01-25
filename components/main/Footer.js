@@ -1,7 +1,9 @@
+
+
 export default function Footer() {
     return (
-      <footer className="bg-black text-white py-12 px-4 md:px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8">
+      <footer id="footer" className="bg-black text-white py-12 px-4 md:px-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8">
           <div className="space-y-4">
             <h2 className="text-lg font-semibold mb-4">STUDIO</h2>
             <nav className="space-y-2">
@@ -19,6 +21,7 @@ export default function Footer() {
               </a>
             </nav>
           </div>
+          {/* <Separator orientation="vertical" /> */}
           <div className="space-y-4">
             <h2 className="text-lg font-semibold mb-4">Contact</h2>
             <div className="space-y-2">

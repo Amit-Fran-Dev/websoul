@@ -168,7 +168,8 @@ export default function ContactForm() {
           src="https://cdn.pixabay.com/video/2022/06/22/121785-724719741_tiny.mp4"
           // src="https://cdn.pixabay.com/video/2022/11/11/138553-769988105_tiny.mp4"
           controls={false}
-        ></video>
+        />
+
         {/* <img
             className="videoContact"
             src="/bg.gif"
