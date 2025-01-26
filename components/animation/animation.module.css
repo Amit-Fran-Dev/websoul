@@ -28,12 +28,10 @@
 }
 
 @keyframes danceAnimation {
-    0%,
-    40% {
+    0%, 40% {
         background-position: 0px 0;
     }
-    60%,
-    100% {
+    60%, 100% {
         background-position: 1200px 0;
     }
 }

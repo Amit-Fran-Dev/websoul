@@ -1,10 +1,10 @@
 
-import HeroSection from "@/components/main/HeroSection";
-import WorkProcess from "@/components/main/WorkProcess";
-// import PricingTable from "@/components/main/PricingTable";
-import ServicesSection from "@/components/main/ServiceSection";
-import TeamExperts from "@/components/main/TeamExperts";
-import ContactForm from "@/components/main/ContactForm";
+import HeroSection from "@/components/pages/HeroSection";
+import WorkProcess from "@/components/pages/WorkProcess";
+import PricingTable from "@/components/pages/PricingTable";
+import ServicesSection from "@/components/pages/ServiceSection";
+import TeamExperts from "@/components/pages/TeamExperts";
+import ContactForm from "@/components/pages/ContactForm";
 
 
 export default function HomePage() {
@@ -13,7 +13,7 @@ export default function HomePage() {
      <HeroSection/>
      <WorkProcess/>
      <ServicesSection/>
-     {/* <PricingTable/> */}
+     <PricingTable/>
      <TeamExperts/>
      <ContactForm/>
     </div>

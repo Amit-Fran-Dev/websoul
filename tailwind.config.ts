@@ -40,11 +40,17 @@ const config: Config = {
   				foreground: 'hsl(var(--popover-foreground))'
   			},
   			black: {
-  				DEFAULT: '#222222',
+				// DEFAULT: '#222222',
+				DEFAULT: '#0e0e0e',
   				foreground: 'hsl(var(--popover-foreground))'
   			},
   			white: {
-  				DEFAULT: '#e6e6fa',
+				// DEFAULT: '#e6e6fa',
+				DEFAULT: '#edefef',
+  				foreground: 'hsl(var(--popover-foreground))'
+  			},
+  			lime: {
+				DEFAULT: '#e5ff9b',
   				foreground: 'hsl(var(--popover-foreground))'
   			},
   			primary: {
