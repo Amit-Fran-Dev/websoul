@@ -15,7 +15,7 @@ export default function HomePage() {
   return (
     <>
       <Nav />
-      <main className="z-0">
+      <main className="z-0 overflow-x-hidden">
         <div className="min-h-screen font-sans tracking-wider body">
           <div id="home" className=" h-14 block bg-black"></div>
           <MessageDiv />

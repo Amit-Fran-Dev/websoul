@@ -19,8 +19,9 @@ export default function RoundAnimation() {
         src="/ThreeDAssets/roundBlack.png"
         width="100"
         height="100"
-        className="absolute z-20 md:top-0 left-0"
+        className="absolute z-20 top-0 left-2"
         style={{ translateY }}
+        alt=""
       />
     </div>
   );

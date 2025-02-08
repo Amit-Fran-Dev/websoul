@@ -20,8 +20,9 @@ export default function PolygonAnimation() {
         src="/ThreeDAssets/polygonBlack.png"
         width="100"
         height="100"
-        className="absolute z-20 md:top-0 right-0"
+        className="absolute z-20 top-0 right-2"
         style={{ translateY, rotate }}
+        alt=""
       />
     </div>
   );

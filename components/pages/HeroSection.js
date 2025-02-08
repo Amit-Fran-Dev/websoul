@@ -49,9 +49,7 @@ const HeroSection = () => {
         <motion.img
           ref={imgRef}
           src="/ThreeDAssets/glassGroup2.png"
-          width="2000"
-          height="2000"
-          className=" absolute z-0 md:top-0 top-14"
+          className=" absolute z-0 md:top-0 top-14 w-[100%] h-[auto] md:w-[99%] md:h-[auto]"
           animate={{
             translateY:[-20,20]
           }}
@@ -74,7 +72,7 @@ const HeroSection = () => {
       <p className="text-xl font-era text-gray-600 mb-8">{SUBTEXT}</p>
       <div
         ref={containerRef}
-        className="relative z-10 aspect-[4/2] md:aspect-[3.1] rounded-2xl overflow-hidden mb-4 bg-black"
+        className="relative z-10 hidden md:block aspect-[4/2] md:aspect-[3.1] rounded-2xl overflow-hidden mb-4 bg-black"
       >
         <motion.img
           src={HERO_IMAGE_SRC}
