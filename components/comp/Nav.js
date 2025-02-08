@@ -13,7 +13,7 @@ const Nav = () => {
 
   return (
     // <header className="md:backdrop-blur-sm md:fixed md:top-0 md:z-50 w-full md:mix-blend-difference bg-black md:bg-white/10">
-      <header className="backdrop-blur-sm fixed top-0 z-50 w-full mix-blend-difference bg-white/10">
+      <header className="backdrop-blur-md grainy fixed top-0 z-50 w-full mix-blend-difference bg-white/10">
       <nav className="flex items-center justify-between px-4 py-2 text-white">
           <Link href="/" className="text-2xl font-bold">
             <Logo

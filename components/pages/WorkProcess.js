@@ -68,7 +68,7 @@ export default function WorkProcess() {
           </a>
           <motion.div style={{
             width:width,
-          }} className="customBtnRoundedAnime bg-lime"></motion.div>
+          }} className="customBtnRoundedAnime bg-[#ffffde]"></motion.div>
         </div>
 
         {/* Description */}

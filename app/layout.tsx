@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "@/styles/globals.css";
 import SmoothScrolling from "@/lib/Lenis";
-import Nav from "@/components/comp/Nav";
-import Footer from "@/components/comp/Footer";
+// import Nav from "@/components/comp/Nav";
+// import Footer from "@/components/comp/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,9 +32,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} font-sans md:pt-50 antialiased`}
       >
         <SmoothScrolling>
-          <Nav />
           {children}
-          <Footer />
         </SmoothScrolling>
       </body>
     </html>

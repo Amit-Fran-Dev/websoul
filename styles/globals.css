@@ -109,15 +109,15 @@ body {
   body {
     /* @apply bg-background text-foreground; */
 
-.fadedText {
-  background: linear-gradient(#22222272, rgba(211, 250, 248, 0));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  left: -0.5rem;
-  top: -4rem;
-  animation: faded linear;
-  animation-timeline: view(50% auto);
-}
+    .fadedText {
+      background: linear-gradient(#22222272, rgba(211, 250, 248, 0));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      left: -0.5rem;
+      top: -4rem;
+      animation: faded linear;
+      animation-timeline: view(50% auto);
+    }
 
 @keyframes faded {
   from {
@@ -235,7 +235,7 @@ body {
   position: relative;
 }
 
-.buttonGroupSt::after {
+/* .buttonGroupSt::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -245,7 +245,7 @@ body {
   transform: translate(-50%, -50%);
   background-color: #222222;
   z-index: -1;
-}
+} */
 
 
 .grainy {

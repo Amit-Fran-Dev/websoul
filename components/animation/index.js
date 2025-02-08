@@ -25,7 +25,7 @@ const Animation = (props) => {
       setstylesFrom(styles.walkColor);
     }
     
-  }, [])
+  }, [theme])
   
   return (
     <div {...props}>

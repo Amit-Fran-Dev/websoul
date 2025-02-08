@@ -139,7 +139,7 @@ export default function ContactForm() {
           playsInline
           src="/bg/121785-724719741.mp4"
           controls={false}
-          style={{ width: "100%", height: "auto" }}
+          style={{ width: "100%", height: "100%" }}
         />
       </div>
     </section>

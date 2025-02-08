@@ -21,7 +21,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <div className="container max-w-6xl px-6 py-12">
+    <div className="container max-w-6xl px-6 pt-12">
       <div className="text-right mb-16">
         <h2 className="text-3xl md:text-4xl font-eraBold font-bold mb-2">
           OUR SERVICES
@@ -34,9 +34,9 @@ export default function ServicesSection() {
         {services.map((service, index) => (
           <div
             key={index}
-            className="mb-16"
+            className=""
           >
-            <div className="mb-4 relative overlapText">
+            <div className="mt-16 mb-6 relative overlapText">
               <h3 className="text-2xl z-20 font-era mb-2">
                 {service.title}
               </h3>

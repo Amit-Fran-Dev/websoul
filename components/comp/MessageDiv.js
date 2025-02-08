@@ -8,7 +8,7 @@ const MessageDiv = () => {
   
   if (message != "") {
     return (
-      <div className="bg-gradient-to-r from-slate-300 to-slate-500">
+      <div className="bg-gradient-to-r from-[#ffffde] via-[#5f5e5e] to-[#ffffde]">
         <Link
           href={link}
           target="_blank"

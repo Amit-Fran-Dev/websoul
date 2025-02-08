@@ -20,9 +20,9 @@ const teamMembers = [
 export default function TeamExperts() {
   return (
     <div
-      className="continer workProcess z-10 relative bg-black text-white py-10 overflow-hidden"
+      className="continer workProcess z-10 relative bg-black text-white pt-10 overflow-hidden"
     >
-      <div className="max-w-6xl p-6 mx-auto">
+      <div className="max-w-6xl px-6 pt-6 mx-auto">
         <div className="text-right flex flex-col">
           <h2 className="text-4xl md:text-4xl sm:text-3xl strokeTextWhite font-eraBold mb-0">
             TEAM OF
