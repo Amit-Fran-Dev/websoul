@@ -1,9 +1,21 @@
+'use client';
+
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { useRef } from "react";
+import {motion, useScroll, useTransform, } from 'framer-motion';
 // import Animation from "../animation";
 
 export default function WorkProcess() {
+  const cardRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ["start center", "center start"],
+  });
+
+  const width = useTransform(scrollYProgress, [0, 1], ["90px", "3000px"]);
+
   return (
-    <div id="steps" className="workProcess z-10 relative bg-black text-white overflow-hidden">
+    <div  className="workProcess z-10 relative bg-black text-white overflow-hidden">
       <div className="container max-w-6xl mx-auto px-4 py-12 ">
         {/* Header */}
         <div className="">
@@ -22,7 +34,7 @@ export default function WorkProcess() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-6 mt-16">
+        <div ref={cardRef} className="grid md:grid-cols-3 gap-6 mt-16">
           <Card className="gradientCard bg-white/20 border-0">
             <CardHeader>
             <div className="text-2xl text-white px-1 ml-auto mb-10">01</div>
@@ -45,7 +57,6 @@ export default function WorkProcess() {
           </Card>
         </div>
 
-        {/* CTA Button */}
         <div className="relative customBtnRounded rounded-full my-8 border-2 font-era bg-white text-black transition-colors">
           <a
             href="#footer"
@@ -55,7 +66,9 @@ export default function WorkProcess() {
           >
             LET&apos;S START
           </a>
-          <div className="customBtnRoundedAnime bg-lime"></div>
+          <motion.div style={{
+            width:width,
+          }} className="customBtnRoundedAnime bg-lime"></motion.div>
         </div>
 
         {/* Description */}

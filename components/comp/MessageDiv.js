@@ -1,0 +1,27 @@
+import Link from "next/link";
+import React from "react";
+import { MoveRight } from 'lucide-react';
+
+const MessageDiv = () => {
+  const message = "Contact Us";
+  const link = "#contact";
+  
+  if (message != "") {
+    return (
+      <div className="bg-gradient-to-r from-slate-300 to-slate-500">
+        <Link
+          href={link}
+          target="_blank"
+          className="text-center text-white py-1 px-2 flex flex-row gap-2 justify-center"
+        >
+          {message}
+          <MoveRight />
+        </Link>
+      </div>
+    );
+  } else {
+    return null;
+  }
+};
+
+export default MessageDiv;

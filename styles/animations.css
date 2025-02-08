@@ -1,8 +1,8 @@
 .heroImage {
   width: 100%;
-  animation: fade-out linear;
+  /* animation: fade-out linear;
   animation-timeline: scroll(root block);
-  animation-range: exit;
+  animation-range: exit; */
 }
 @keyframes fade-out {
   from {

@@ -116,13 +116,13 @@ body {
   left: -0.5rem;
   top: -4rem;
   animation: faded linear;
-  animation-timeline: view(90% auto);
+  animation-timeline: view(50% auto);
 }
 
 @keyframes faded {
   from {
     opacity: 0;
-    transform: translateY(3rem);
+    transform: translateY(4rem);
   }
   to {
     opacity: 1;
@@ -173,13 +173,13 @@ body {
   /* background:radial-gradient(#e69706,#e69706); */
   /* background-color: #f9ffa5; */
   border-radius: 50%;
-  transition: width 0.5s ease-in-out;
+  /* transition: width 0.5s ease-in-out; */
   z-index: -1;
 }
 
-.customBtnRounded:has(a:hover) .customBtnRoundedAnime {
+/* .customBtnRounded:has(a:hover) .customBtnRoundedAnime {
   width: 2000px;
-}
+} */
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -245,4 +245,13 @@ body {
   transform: translate(-50%, -50%);
   background-color: #222222;
   z-index: -1;
+}
+
+
+.grainy {
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png"); 
+  background-blend-mode: multiply;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: contain;
 }

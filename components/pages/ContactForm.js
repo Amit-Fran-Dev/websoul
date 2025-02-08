@@ -1,10 +1,7 @@
 "use client";
 
-import { useState } from "react";
-// import { zodResolver } from "@hookform/resolvers/zod"
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
-// import * as z from "zod"
-
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -16,69 +13,50 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-// import { toast } from "@/components/ui/use-toast"
+import { useInView } from "framer-motion";
 
-// const formSchema = z.object({
-//   fullName: z.string().min(2, {
-//     message: "Full name must be at least 2 characters.",
-//   }),
-//   email: z.string().email({
-//     message: "Please enter a valid email address.",
-//   }),
-//   contactNumber: z.string().min(10, {
-//     message: "Please enter a valid phone number.",
-//   }),
-//   message: z.string().min(10, {
-//     message: "Message must be at least 10 characters.",
-//   }),
-// })
+const HEADING_TEXT = "CONNECT WITH US";
+const DESCRIPTION_TEXT =
+  "We would like to work for you. Believe me this will the best platform for your business.";
+const FULL_NAME_LABEL = "FULL NAME";
+const FULL_NAME_PLACEHOLDER = "Write Your Full Name";
+const EMAIL_LABEL = "EMAIL";
+const EMAIL_PLACEHOLDER = "Provide Your Email Address";
+const CONTACT_LABEL = "CONTACT NUMBER";
+const CONTACT_PLACEHOLDER = "Your Contact / Phone Number";
+const MESSAGE_LABEL = "MESSAGE OR ENQUIRY";
+const MESSAGE_PLACEHOLDER = "Write Your message about your enquiry";
+const SUBMIT_TEXT = "SUBMIT";
+const SUBMITTING_TEXT = "Submitting...";
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const videoRef = useRef(null);
+  const isInView = useInView(videoRef, { once: false, margin: "-10% 0px" });
 
-  const form = useForm({
-    // resolver: zodResolver(formSchema),
-    // defaultValues: {
-    //   fullName: "",
-    //   email: "",
-    //   contactNumber: "",
-    //   message: "",
-    // },
-  });
+  useEffect(() => {
+    if (videoRef.current) {
+      if (isInView) {
+        videoRef.current.play();
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  }, [isInView]);
+
+  const form = useForm();
 
   async function onSubmit() {
     setIsSubmitting(true);
-    // try {
-    //   // Here you would typically send the form data to your server
-    //   await new Promise((resolve) => setTimeout(resolve, 1000)) // Simulate API call
-    //   toast({
-    //     title: "Success!",
-    //     description: "Your message has been sent. We'll get back to you soon.",
-    //   })
-    //   form.reset()
-    // } catch (error) {
-    //   toast({
-    //     title: "Error",
-    //     description: "Something went wrong. Please try again.",
-    //     variant: "destructive",
-    //   })
-    // } finally {
-    //   setIsSubmitting(false)
-    // }
   }
 
   return (
     <section>
-      <div
-        className="continer z-10 relative bg-white py-10 px-6 overflow-hidden"
-      >
+      <div className="continer z-10 relative bg-white py-10 px-6 overflow-hidden">
         <div className="max-w-sm mx-auto p-8 rounded-lg shadow-sm bg-white">
           <div className="mb-8">
-            <h3 className="text-3xl font-eraBold mb-3">CONNECT WITH US</h3>
-            <p className="text-muted-foreground">
-              We would like to work for you. Believe me this will the best
-              platform for your business.
-            </p>
+            <h3 className="text-3xl font-eraBold mb-3">{HEADING_TEXT}</h3>
+            <p className="text-muted-foreground">{DESCRIPTION_TEXT}</p>
           </div>
 
           <Form {...form}>
@@ -88,9 +66,9 @@ export default function ContactForm() {
                 name="fullName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>FULL NAME</FormLabel>
+                    <FormLabel>{FULL_NAME_LABEL}</FormLabel>
                     <FormControl>
-                      <Input placeholder="Write Your Full Name" {...field} />
+                      <Input placeholder={FULL_NAME_PLACEHOLDER} {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -102,12 +80,9 @@ export default function ContactForm() {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>EMAIL</FormLabel>
+                    <FormLabel>{EMAIL_LABEL}</FormLabel>
                     <FormControl>
-                      <Input
-                        placeholder="Provide Your Email Address"
-                        {...field}
-                      />
+                      <Input placeholder={EMAIL_PLACEHOLDER} {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -119,12 +94,9 @@ export default function ContactForm() {
                 name="contactNumber"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>CONTACT NUMBER</FormLabel>
+                    <FormLabel>{CONTACT_LABEL}</FormLabel>
                     <FormControl>
-                      <Input
-                        placeholder="Your Contact / Phone Number"
-                        {...field}
-                      />
+                      <Input placeholder={CONTACT_PLACEHOLDER} {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -136,10 +108,10 @@ export default function ContactForm() {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>MESSAGE OR ENQUIRY</FormLabel>
+                    <FormLabel>{MESSAGE_LABEL}</FormLabel>
                     <FormControl>
                       <Textarea
-                        placeholder="Write Your message about your enquiry"
+                        placeholder={MESSAGE_PLACEHOLDER}
                         className="min-h-[100px]"
                         {...field}
                       />
@@ -154,30 +126,21 @@ export default function ContactForm() {
                 className="w-full font-eraBold bg-black text-white hover:bg-gray-800"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Submitting..." : "SUBMIT"}
+                {isSubmitting ? SUBMITTING_TEXT : SUBMIT_TEXT}
               </Button>
             </form>
           </Form>
         </div>
         <video
-          // tabindex="-1"
-          id="vjs_video_3_html5_api"
+          ref={videoRef}
           className="videoContact"
-          loop={true}
-          muted="muted"
-          autoplay=""
-          // src="https://cdn.pixabay.com/video/2022/09/30/133081-755697272_tiny.mp4"
-          // src="https://cdn.pixabay.com/video/2020/12/03/58201-487176833_tiny.mp4"
-          // src="https://cdn.pixabay.com/video/2022/06/22/121785-724719741_tiny.mp4"
+          loop
+          muted
+          playsInline
           src="/bg/121785-724719741.mp4"
           controls={false}
+          style={{ width: "100%", height: "auto" }}
         />
-
-        {/* <img
-            className="videoContact"
-            src="/bg.gif"
-            controls={false}
-          /> */}
       </div>
     </section>
   );

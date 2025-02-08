@@ -1,4 +1,6 @@
 "use client";
+
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -7,75 +9,43 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useState } from "react";
 
-const tiers = [
+const PRICING_PLANS = [
   {
     name: "STARTER",
     price: 6499,
-    features: [
-      "4 Page Modern Website",
-      "Domain Configuration",
-      "Hosting Configuration",
-      "Business Email",
-      "Mobile Responsive",
-      "Admin Panel",
-      "Unlimited Photo & Videos",
-      "Functionality",
-      "Ontime Chat",
-      "Contact Form",
-      "SEO ready Website",
-      "Security",
-      "Free SSL",
-      "Technical Support 1 Year",
-    ],
   },
   {
     name: "BUSINESS",
     price: 7999,
-    features: [
-      "4 Page Modern Website",
-      "Domain Configuration",
-      "Hosting Configuration",
-      "Business Email",
-      "Mobile Responsive",
-      "Admin Panel",
-      "Unlimited Photo & Videos",
-      "Functionality",
-      "Ontime Chat",
-      "Contact Form",
-      "SEO ready Website",
-      "Security",
-      "Free SSL",
-      "Technical Support 1 Year",
-    ],
   },
   {
     name: "E-COMMERCE",
     price: 9499,
-    features: [
-      "4 Page Modern Website",
-      "Domain Configuration",
-      "Hosting Configuration",
-      "Business Email",
-      "Mobile Responsive",
-      "Admin Panel",
-      "Unlimited Photo & Videos",
-      "Functionality",
-      "Ontime Chat",
-      "Contact Form",
-      "SEO ready Website",
-      "Security",
-      "Free SSL",
-      "Technical Support 1 Year",
-    ],
   },
+];
+
+const FEATURES = [
+  "4 Page Modern Website",
+  "Domain Configuration",
+  "Hosting Configuration",
+  "Business Email",
+  "Mobile Responsive",
+  "Admin Panel",
+  "Unlimited Photo & Videos",
+  "Functionality",
+  "Ontime Chat",
+  "Contact Form",
+  "SEO ready Website",
+  "Security",
+  "Free SSL",
+  "Technical Support 1 Year",
 ];
 
 export default function PricingTable() {
   const [active, setActive] = useState(2);
   return (
-    <div id="pricing" className="container max-w-6xl mx-auto px-4 py-12">
+    <div className="container max-w-6xl mx-auto px-4 py-12">
       <div className="max-w-6xl mx-auto">
         <div className="text-left">
           <h1 className="text-4xl font-bold font-eraBold">
@@ -87,141 +57,54 @@ export default function PricingTable() {
           </p>
         </div>
         <div className="flex mx-auto gap-4 ml-auto my-10 justify-center flex-wrap">
-          <button
-            style={{ color: active === 1 ? "#ec8e00" : "initial", borderBottom: active === 1 ? "2px solid #ec8e00" : "none" }}
-            onClick={() => setActive(1)}
-            className="text-2xl font-era"
-          >
-            Portfolio
-          </button>
-          <button
-            style={{ color: active === 2 ? "#ec8e00" : "initial", borderBottom: active === 2 ? "2px solid #ec8e00" : "none" }}
-            onClick={() => setActive(2)}
-            className="text-2xl font-era"
-          >
-            Business
-          </button>
-          <button
-            style={{ color: active === 3 ? "#ec8e00" : "initial", borderBottom: active === 3 ? "2px solid #ec8e00" : "none" }}
-            onClick={() => setActive(3)}
-            className="text-2xl font-era"
-          >
-            E-Commerce
-          </button>
+          <TabButton label="Portfolio" active={active} setActive={() => setActive(1)} tabIndex={1} />
+          <TabButton label="Business" active={active} setActive={() => setActive(2)} tabIndex={2} />
+          <TabButton label="E-Commerce" active={active} setActive={() => setActive(3)} tabIndex={3} />
         </div>
-        {active === 2 && <BusinessScreen />}
-        {active === 1 && <PortfolioScreen/>}
-        {active === 3 && <ECommerceScreen />}
+        {active === 2 && <PricingCards />}
+        {active === 1 && <PricingCards />}
+        {active === 3 && <PricingCards />}
       </div>
     </div>
   );
 }
 
-export const PortfolioScreen = () => {
-  return (
-    <div className="grid md:grid-cols-3 gap-6">
-      {tiers.map((tier) => (
-        <Card key={tier.name} className="bg-black text-white">
-          <CardHeader>
-            <CardTitle className="text-2xl font-bold text-center font-eraBold">
-              {tier.name}
-              <div className="mt-4 text-4xl font-eraBold">${tier.price}</div>
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 ml-6">
-            {tier.features.map((feature, index) => (
-              <div
-                key={index}
-                className={`py-2 ${
-                  ["Functionality", "Security"].includes(feature)
-                    ? "font-bold text-lg mt-6"
-                    : ""
-                }`}
-              >
-                {feature}
-              </div>
-            ))}
-          </CardContent>
-          <CardFooter>
-            <Button className="w-full bg-white text-black hover:bg-gray-200">
-              BOOK ORDER
-            </Button>
-          </CardFooter>
-        </Card>
-      ))}
-    </div>
-  );
-};
+const TabButton = ({ label, active, setActive, tabIndex }) => (
+  <button
+    style={{ color: active === tabIndex ? "#ec8e00" : "initial", borderBottom: active === tabIndex ? "2px solid #ec8e00" : "none" }}
+    onClick={setActive}
+    className="text-2xl font-era"
+  >
+    {label}
+  </button>
+);
 
-export const BusinessScreen = () => {
-  return (
-    <div className="grid md:grid-cols-3 gap-6">
-      {tiers.map((tier) => (
-        <Card key={tier.name} className="bg-black text-white">
-          <CardHeader>
-            <CardTitle className="text-2xl font-bold text-center font-eraBold">
-              {tier.name}
-              <div className="mt-4 text-4xl font-eraBold">${tier.price}</div>
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 ml-6">
-            {tier.features.map((feature, index) => (
-              <div
-                key={index}
-                className={`py-2 ${
-                  ["Functionality", "Security"].includes(feature)
-                    ? "font-bold text-lg mt-6"
-                    : ""
-                }`}
-              >
-                {feature}
-              </div>
-            ))}
-          </CardContent>
-          <CardFooter>
-            <Button className="w-full bg-white text-black hover:bg-gray-200">
-              BOOK ORDER
-            </Button>
-          </CardFooter>
-        </Card>
-      ))}
-    </div>
-  );
-};
-
-export const ECommerceScreen = () => {
-  return (
-    <div className="grid md:grid-cols-3 gap-6">
-      {tiers.map((tier) => (
-        <Card key={tier.name} className="bg-black text-white">
-          <CardHeader>
-            <CardTitle className="text-2xl font-bold text-center font-eraBold">
-              {tier.name}
-              <div className="mt-4 text-4xl font-eraBold">${tier.price}</div>
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 ml-6">
-            {tier.features.map((feature, index) => (
-              <div
-                key={index}
-                className={`py-2 ${
-                  ["Functionality", "Security"].includes(feature)
-                    ? "font-bold text-lg mt-6"
-                    : ""
-                }`}
-              >
-                {feature}
-              </div>
-            ))}
-          </CardContent>
-          <CardFooter>
-            <Button className="w-full bg-white text-black hover:bg-gray-200">
-              BOOK ORDER
-            </Button>
-          </CardFooter>
-        </Card>
-      ))}
-    </div>
-  );
-};
-
+const PricingCards = () => (
+  <div className="grid md:grid-cols-3 gap-6">
+    {PRICING_PLANS.map((plan) => (
+      <Card key={plan.name} className="bg-black text-white">
+        <CardHeader>
+          <CardTitle className="text-2xl font-bold text-center font-eraBold">
+            {plan.name}
+            <div className="mt-4 text-4xl font-eraBold">${plan.price}</div>
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4 ml-6">
+          {FEATURES.map((feature, index) => (
+            <div
+              key={index}
+              className={`py-2 ${["Functionality", "Security"].includes(feature) ? "font-bold text-lg mt-6" : ""}`}
+            >
+              {feature}
+            </div>
+          ))}
+        </CardContent>
+        <CardFooter>
+          <Button className="w-full bg-white text-black hover:bg-gray-200">
+            BOOK ORDER
+          </Button>
+        </CardFooter>
+      </Card>
+    ))}
+  </div>
+);
