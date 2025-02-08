@@ -251,7 +251,6 @@ body {
 .grainy {
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png"); 
   background-blend-mode: multiply;
-  background-position: center;
   background-repeat: repeat;
   background-size: contain;
 }
