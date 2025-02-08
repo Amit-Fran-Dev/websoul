@@ -72,7 +72,7 @@ const HeroSection = () => {
       <p className="text-xl font-era text-gray-600 mb-8">{SUBTEXT}</p>
       <div
         ref={containerRef}
-        className="relative z-10 hidden md:block aspect-[4/2] md:aspect-[3.1] rounded-2xl overflow-hidden mb-4 bg-black"
+        className="relative z-10 aspect-[4/2] md:aspect-[3.1] rounded-2xl overflow-hidden mb-4 bg-black"
       >
         <motion.img
           src={HERO_IMAGE_SRC}
