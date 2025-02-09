@@ -7,5 +7,8 @@
         "**/.DS_Store": true,
         "**/Thumbs.db": true
     },
-    "hide-files.files": []
+    "hide-files.files": [],
+    "workbench.sideBar.location": "right",
+    "workbench.activityBar.iconClickBehavior": "toggle",
+    "workbench.activityBar.location": "default"
 }

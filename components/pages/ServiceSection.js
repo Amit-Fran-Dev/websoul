@@ -1,25 +1,12 @@
-export default function ServicesSection() {
-  const services = [
-    {
-      number: "01",
-      title: "UI/UX DESIGNING",
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque quis veniam vel omnis? Commodi, maiores veritatis? Eum voluptate soluta ducimus distinctio magni, suscipit sunt. Velit quod cum quas possimus temporibus?",
-    },
-    {
-      number: "02",
-      title: "WEB DEVELOPEMENT",
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque quis veniam vel omnis? Commodi, maiores veritatis? Eum voluptate soluta ducimus distinctio magni, suscipit sunt. Velit quod cum quas possimus temporibus?",
-    },
-    {
-      number: "03",
-      title: "SEARCH ENGINE OPTIMISATION",
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque quis veniam vel omnis? Commodi, maiores veritatis? Eum voluptate soluta ducimus distinctio magni, suscipit sunt. Velit quod cum quas possimus temporibus?",
-    },
-  ];
+'use client';
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
+export default function ServicesSection() {
+  const ref = useRef(null);
+        const { scrollYProgress } = useScroll({ target: ref, offset: ["center end", "end center"] });
+        const y = useTransform(scrollYProgress, [0, 1], [10, 0]);
+        const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
   return (
     <div className="container max-w-6xl px-6 pt-12">
       <div className="text-right mb-16">
@@ -27,33 +14,51 @@ export default function ServicesSection() {
           OUR SERVICES
         </h2>
         <p className="text-black">
-          We provide responsible and SEO friendly websites for your business.
+          We provide responsible and SEO-friendly websites for your business.
         </p>
       </div>
 
-        {services.map((service, index) => (
-          <div
-            key={index}
-            className=""
-          >
-            <div className="mt-16 mb-6 relative overlapText">
-              <h3 className="text-2xl z-20 font-era mb-2">
-                {service.title}
-              </h3>
-              <span className="fadedText absolute text-8xl font-bold font-eraBold text-gray-900">
+      {services.map((service, index) => {        
+        return (
+          <div key={index} className="relative" ref={ref}>
+            <div className="mt-16 mb-6 relative">
+              <h3 className="text-2xl z-20 font-era mb-2">{service.title}</h3>
+              <motion.span 
+                style={{ y, opacity }}
+                className="fadedText absolute text-8xl font-bold font-eraBold text-gray-900"
+              >
                 {service.number}
-              </span>
+              </motion.span>
             </div>
-            <div>
-              <p className="text-black">
-                {service.description}
-              </p>
-              <button className="text-sm my-6 font-era hover:text-gray-600 transition-colors">
-                READ MORE
-              </button>
-            </div>
+            <p className="text-black">{service.description}</p>
+            <button className="text-sm my-6 font-era hover:text-gray-600 transition-colors">
+              READ MORE
+            </button>
           </div>
-        ))}
-      </div>
+        );
+      })}
+    </div>
   );
 }
+
+
+export const services = [
+  {
+    number: "01",
+    title: "UI/UX DESIGNING",
+    description:
+      "Our UI/UX design process is all about crafting intuitive, visually stunning, and user-friendly experiences. We focus on understanding user behavior and business goals to design interfaces that are not only beautiful but also functional and engaging. Every interaction is thoughtfully designed to enhance usability and keep visitors engaged."
+  },
+  {
+    number: "02",
+    title: "WEB DEVELOPMENT",
+    description:
+      "We specialize in building modern, responsive, and high-performing web solutions tailored to your needs. Whether it's a sleek business website, a dynamic web app, or a powerful e-commerce platform, our development ensures speed, security, and scalability. We use the latest technologies to create seamless experiences across all devices."
+  },
+  {
+    number: "03",
+    title: "SEARCH ENGINE OPTIMIZATION",
+    description:
+      "A great website deserves great visibility. Our SEO strategies help you rank higher on search engines, drive organic traffic, and reach the right audience. From keyword research to technical optimization and content strategy, we ensure your website stays ahead of the competition and attracts potential customers effortlessly."
+  }
+];

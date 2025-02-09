@@ -1,7 +1,7 @@
 "use client";
 import HeroSection from "@/components/pages/HeroSection";
 import WorkProcess from "@/components/pages/WorkProcess";
-import PricingTable from "@/components/pages/PricingTable";
+import PricingTable from "@/components/pages/PricingTable2";
 import ServicesSection from "@/components/pages/ServiceSection";
 import TeamExperts from "@/components/pages/TeamExperts";
 import ContactForm from "@/components/pages/ContactForm";

@@ -7,20 +7,23 @@ import AppSidebar from "@/components/comp/AppSideBar";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { navigationList } from "@/lib/navigationList";
 import Logo from "@/components/comp/logo";
+import { usePathname } from "next/navigation";
 
 const Nav = () => {
   const [sideBar, setSideBar] = useState(false);
+  const isRoot = useIsRootPath();
 
   return (
     // <header className="md:backdrop-blur-sm md:fixed md:top-0 md:z-50 w-full md:mix-blend-difference bg-black md:bg-white/10">
       <header className="backdrop-blur-md grainy overflow-hidden fixed top-0 z-50 w-full mix-blend-difference bg-white/10">
       <nav className="flex items-center justify-between px-4 py-2 text-white">
-          <Link href="/" className="text-2xl font-bold">
+          <Link href="/" className="text-2xl flex gap-2 font-bold">
             <Logo
               color="dark"
               size={40}
               className="bg-white p-1 rounded-full"
             />
+            <h1 className="my-auto text-3xl font-era tracking-widest" >WebsSoul</h1>
           </Link>
           {/* Desktop Navigation */}
           <div className="hidden md:flex gap-8">
@@ -29,8 +32,8 @@ const Nav = () => {
               return (
                 <Link
                   key={item.href}
-                  href={item.href}
-                  className="font-era hover:text-gray-300  flex items-center gap-2 tracking-widest"
+                  href={isRoot ? item.href : `/${item.href}` }
+                  className="font-era hover:text-gray-300 flex items-center gap-2 tracking-widest"
                 >
                   {Icon ? <Icon className="w-4 h-4 text-lime" /> : null}
                   {item.label}
@@ -60,3 +63,8 @@ const Nav = () => {
 };
 
 export default Nav;
+
+
+export const useIsRootPath = () => {
+  return usePathname() === "/";
+};

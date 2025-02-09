@@ -10,19 +10,16 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+const CATEGORIES = [
+  { name: "Portfolio Websites", color: "red-500" },
+  { name: "Business Websites", color: "yellow-500" },
+  { name: "E-Commerce Websites", color: "green-500" },
+];
+
 const PRICING_PLANS = [
-  {
-    name: "STARTER",
-    price: 6499,
-  },
-  {
-    name: "BUSINESS",
-    price: 7999,
-  },
-  {
-    name: "E-COMMERCE",
-    price: 9499,
-  },
+  { name: "Starter Plan", price: 5000 },
+  { name: "Professional Plan", price: 10000 },
+  { name: "Enterprise Plan", price: 15000 },
 ];
 
 const FEATURES = [
@@ -43,68 +40,66 @@ const FEATURES = [
 ];
 
 export default function PricingTable() {
-  const [active, setActive] = useState(2);
+  const [activeCategory, setActiveCategory] = useState(0);
+
   return (
-    <div className="container max-w-6xl mx-auto px-4 pt-12">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-left">
-          <h1 className="text-4xl font-bold font-eraBold">
-            WEBSITE DESIGN PLAN
-          </h1>
-          <p className="text-muted-foreground max-w-2xl">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque quis
-            veniam vel omnis? Commodi, maiores veritatis?
-          </p>
-        </div>
-        <div className="flex mx-auto gap-4 ml-auto my-10 justify-center flex-wrap">
-          <TabButton label="Portfolio" active={active} setActive={() => setActive(1)} tabIndex={1} />
-          <TabButton label="Business" active={active} setActive={() => setActive(2)} tabIndex={2} />
-          <TabButton label="E-Commerce" active={active} setActive={() => setActive(3)} tabIndex={3} />
-        </div>
-        {active === 2 && <PricingCards />}
-        {active === 1 && <PricingCards />}
-        {active === 3 && <PricingCards />}
+    <div className="container max-w-6xl mx-auto px-4 pt-12 text-center">
+      <h1 className="text-4xl font-bold font-eraBold">WEBSITE DESIGN PLANS</h1>
+      <p className="text-muted-foreground max-w-2xl mx-auto mt-2">
+        Choose the best plan that suits your business needs.
+      </p>
+      <div className="flex justify-center gap-6 my-8">
+        {CATEGORIES.map((category, index) => (
+          <TabButton
+            key={index}
+            label={category.name}
+            active={activeCategory === index}
+            onClick={() => setActiveCategory(index)}
+          />
+        ))}
       </div>
+      <PricingCards activeCategory={activeCategory} />
     </div>
   );
 }
 
-const TabButton = ({ label, active, setActive, tabIndex }) => (
+const TabButton = ({ label, active, onClick }) => (
   <button
-    style={{ color: active === tabIndex ? "#ec8e00" : "initial", borderBottom: active === tabIndex ? "2px solid #ec8e00" : "none" }}
-    onClick={setActive}
-    className="text-2xl font-era"
+    className={`text-2xl font-era px-4 py-2 border-b-2 transition-all duration-300 ${
+      active ? "border-orange-500 text-orange-500" : "border-transparent"
+    }`}
+    onClick={onClick}
   >
     {label}
   </button>
 );
 
-const PricingCards = () => (
-  <div className="grid md:grid-cols-3 gap-6">
-    {PRICING_PLANS.map((plan) => (
-      <Card key={plan.name} className="bg-black text-white">
-        <CardHeader>
-          <CardTitle className="text-2xl font-bold text-center font-eraBold">
-            {plan.name}
-            <div className="mt-4 text-4xl font-eraBold">${plan.price}</div>
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4 ml-6">
-          {FEATURES.map((feature, index) => (
-            <div
-              key={index}
-              className={`py-2 ${["Functionality", "Security"].includes(feature) ? "font-bold text-lg mt-6" : ""}`}
-            >
-              {feature}
-            </div>
-          ))}
-        </CardContent>
-        <CardFooter>
-          <Button className="w-full bg-white text-black hover:bg-gray-200">
-            BOOK ORDER
-          </Button>
-        </CardFooter>
-      </Card>
-    ))}
-  </div>
-);
+const PricingCards = ({ activeCategory }) => {
+  return (
+    <div className="grid md:grid-cols-3 gap-6">
+      {PRICING_PLANS.map((plan) => (
+        <Card key={plan.name} className={` text-black p-6 rounded-xl border border-${CATEGORIES[activeCategory].color}`}>
+          <CardHeader className="text-center">
+            <CardTitle className="text-3xl font-eraBold ">{plan.name}</CardTitle>
+            <div className="mt-2 text-4xl font-eraBold text-orange-400">${plan.price}</div>
+          </CardHeader>
+          <CardContent className="mt-4 space-y-3 text-left">
+            {FEATURES.map((feature, idx) => (
+              <div
+                key={idx}
+                className={`py-2 ${["Functionality", "Security"].includes(feature) ? "font-bold text-lg mt-4" : ""}`}
+              >
+                {feature}
+              </div>
+            ))}
+          </CardContent>
+          <CardFooter className="mt-4">
+            <Button className="w-full bg-orange-500 text-black hover:bg-orange-600 font-bold py-2 px-4 rounded-lg">
+              BOOK ORDER
+            </Button>
+          </CardFooter>
+        </Card>
+      ))}
+    </div>
+  );
+};
