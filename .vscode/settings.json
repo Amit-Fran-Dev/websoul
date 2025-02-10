@@ -5,9 +5,30 @@
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true,
-        "**/Thumbs.db": true
+        "**/Thumbs.db": true,
+        "node_modules": true,
+        ".vscode": true,
+        ".next": true,
+        ".eslintrc.json": true,
+        ".gitignore": true,
+        "package-lock.json": true,
+        "next.config.mjs": true,
+        "next-env.d.ts": true,
+        "README.md": true,
+        "tsconfig.json": true
     },
-    "hide-files.files": [],
+    "hide-files.files": [
+        "node_modules",
+        ".vscode",
+        ".next",
+        ".eslintrc.json",
+        ".gitignore",
+        "package-lock.json",
+        "next.config.mjs",
+        "next-env.d.ts",
+        "README.md",
+        "tsconfig.json"
+    ],
     "workbench.sideBar.location": "right",
     "workbench.activityBar.iconClickBehavior": "toggle",
     "workbench.activityBar.location": "default"

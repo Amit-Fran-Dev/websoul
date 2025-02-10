@@ -32,9 +32,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={twMerge(dmSans.className,'md:pt-50 antialiased')}
+        className={twMerge(dmSans.className,'md:pt-50 bg-white antialiased')}
       >
-        <SmoothScrolling>{children}</SmoothScrolling>
+        <SmoothScrolling>
+          {children}</SmoothScrolling>
       </body>
     </html>
   );

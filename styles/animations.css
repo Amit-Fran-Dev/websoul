@@ -1,56 +1,17 @@
-.heroImage {
-  width: 100%;
-  /* animation: fade-out linear;
-  animation-timeline: scroll(root block);
-  animation-range: exit; */
-}
-@keyframes fade-out {
-  from {
-    scale: 1;
-    filter:saturate(100%) opacity(1);
-  }
-  to {
-    scale: 2;
-    filter:saturate(0%) opacity(0);
-    transform: translateY(-300px);
-  }
-}
-.cardImageBg {
-  animation: fade-in linear;
-  animation-timeline: scroll(root block);
-  animation-range-start: contain;
-}
-.walkImage {
-  animation: fade-in linear;
-  animation-timeline: scroll(root block);
-  animation-range: contain;
-  z-index: -11;
-}
 
-@keyframes fade-in {
-  from {
-    scale: 1;
-    opacity: 1;
-    transform: translateX(0);
-  }
-  to {
-    scale: 1;
-    opacity: 1;
-    transform: translateX(50vw);
-  }
-}
 
-/* .customBtnRoundedAnime{
-  animation: scale-up linear;
-  animation-timeline: scroll(root block);
-  animation-range-start: exit;
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #222;
+  }
+  ::-webkit-scrollbar-thumb {
+    width: 20px;
+    border-radius: 1rem;
+    border: 4px solid #222;
+    background-color: #ffffff;
+  }
+@media (max-width: 768px) {
+    ::-webkit-scrollbar {
+        display: none;
+    }
 }
-
-@keyframes scale-up {
-  from {
-    width: 0px;
-  }
-  to {
-    width: 5000px;
-  }
-} */

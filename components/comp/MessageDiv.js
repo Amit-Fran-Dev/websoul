@@ -3,7 +3,7 @@ import React from "react";
 import { MoveRight } from 'lucide-react';
 
 const MessageDiv = () => {
-  const message = "Contact Us";
+  const message = "";
   const link = "#contact";
   
   if (message != "") {

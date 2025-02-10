@@ -1,8 +1,10 @@
 import React from "react";
 import { navigationList } from "@/lib/navigationList";
 import Link from "next/link";
+import { useIsRootPath } from "./Nav";
 
-const AppSidebar = ({handleHideSidebar}) => {
+const AppSidebar = ({ handleHideSidebar }) => {
+  const isRoot = useIsRootPath();
   return (
     <div className="p-4 max-w-30">
       {navigationList.map((item) => {
@@ -10,7 +12,7 @@ const AppSidebar = ({handleHideSidebar}) => {
         return (
           <Link
             key={item.href}
-            href={item.href}
+            href={isRoot ? item.href : `/${item.href}` }
             onClick={() => handleHideSidebar()}
             className=" flex items-center mb-4 gap-4"
           >

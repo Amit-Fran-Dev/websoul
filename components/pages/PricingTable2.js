@@ -88,7 +88,7 @@ export default function PricingTable() {
                   <Tooltip>
                     <TooltipTrigger asChild>
                   <li key={feature} className="flex cursor-pointer items-center gap-2 hover:border-b border-b-slate-800">
-                    <CircleCheckBig className="h-4 w-4 text-green-700" />
+                    <CircleCheckBig className={`h-4 w-4 ${plan.name === "Custom" ? "text-green-400" : "text-green-600"}`} />
                     <span className="text-sm">{feature.name}</span>
                   </li>
                   </TooltipTrigger>

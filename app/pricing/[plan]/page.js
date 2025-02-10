@@ -1,38 +1,27 @@
-import { pricingPlans } from "@/data/pricingPlans";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+"use client";
+import { PricingProvider, usePricing } from "@/components/pages/pricing/pricingContext";
 import Footer from "@/components/comp/Footer";
 import Nav from "@/components/comp/Nav";
 import PricingDetails from "@/components/pages/pricing/PricingDetails";
+import PlanNotFound from "@/components/pages/pricing/PlanNotFound";
+
+function PricingContent() {
+  const { selectedPlan } = usePricing();
+
+  if (!selectedPlan) return <PlanNotFound />;
+
+  return <PricingDetails plan={selectedPlan.name} />;
+}
 
 export default function PricingScreen({ params }) {
-  const { plan } = params;
-
-  // Find the selected plan
-  const selectedPlan = pricingPlans.find(
-    (p) => p.name.toLowerCase() === plan.toLowerCase()
-  );
-
-  console.log(selectedPlan);
-  if (!selectedPlan) {
-    return (
-      <div className="flex flex-col items-center justify-center h-screen">
-        <h1 className="text-2xl font-bold">Plan Not Found</h1>
-        <Link href="/">
-          <Button className="mt-4">Go Back</Button>
-        </Link>
-      </div>
-    );
-  }
-
   return (
-    <>
+    <PricingProvider planName={params?.plan}>
       <Nav />
-      <div className=" h-14 block bg-black"></div>
-      <div className="body bg-[white]">
-        <PricingDetails plan={plan}/>
-      </div>
+      <div className="h-14 bg-black"></div>
+      <main className="bg-white">
+        <PricingContent />
+      </main>
       <Footer />
-    </>
+    </PricingProvider>
   );
 }
