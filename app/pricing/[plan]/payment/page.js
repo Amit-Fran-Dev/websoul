@@ -1,15 +1,21 @@
 "use client";
 import { useState } from "react";
 import Script from "next/script";
-import {
-  PricingProvider,
-  usePricing,
-} from "@/contexts/pricingContext";
+import { PricingProvider, usePricing } from "@/contexts/pricingContext";
 import Nav from "@/components/comp/Nav";
 import PlanNotFound from "@/components/pages/pricing/PlanNotFound";
 import Footer from "@/components/comp/Footer";
 import { Button } from "@/components/ui/button";
 import { usePayment } from "@/contexts/paymentProvider";
+import { useUser } from "@auth0/nextjs-auth0/client";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import Link from "next/link";
 
 function PaymentContent() {
   const { selectedPlan } = usePricing();
@@ -78,13 +84,22 @@ function PaymentContent() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
-      <Script src="https://checkout.razorpay.com/v2/checkout.js" strategy="lazyOnload" />
-      <h1 className="text-3xl font-bold mb-2 text-gray-800">Complete Your Payment</h1>
+      <Script
+        src="https://checkout.razorpay.com/v2/checkout.js"
+        strategy="lazyOnload"
+      />
+      <h1 className="text-3xl font-bold mb-2 text-gray-800">
+        Complete Your Payment
+      </h1>
       <p className="text-gray-600">Securely pay for your selected plan</p>
 
       <div className="bg-white shadow-lg rounded-lg p-6 mt-6 w-full max-w-md">
-        <h2 className="text-2xl font-semibold text-gray-800">{selectedPlan.name}</h2>
-        <p className="text-gray-600 mt-2">{selectedPlan.description || "Get access to exclusive features"}</p>
+        <h2 className="text-2xl font-semibold text-gray-800">
+          {selectedPlan.name}
+        </h2>
+        <p className="text-gray-600 mt-2">
+          {selectedPlan.description || "Get access to exclusive features"}
+        </p>
         <div className="flex justify-between items-center mt-4">
           <span className="text-xl font-bold text-blue-600">₹{amount}</span>
           <span className="text-sm text-gray-500">One-time Payment</span>
@@ -105,9 +120,23 @@ function PaymentContent() {
             className="mr-2 w-4 h-4"
           />
           <label htmlFor="agree">
-            I agree to the <a href="/policies/terms-conditions" className="text-blue-600 underline" target="_blank">Terms & Conditions</a> and
+            I agree to the{" "}
+            <a
+              href="/policies/terms-conditions"
+              className="text-blue-600 underline"
+              target="_blank"
+            >
+              Terms & Conditions
+            </a>{" "}
+            and
           </label>
-          <a href="/policies/refund-policy" className="text-blue-600 underline ml-2" target="_blank">Refund Policy</a>
+          <a
+            href="/policies/refund-policy"
+            className="text-blue-600 underline ml-2"
+            target="_blank"
+          >
+            Refund Policy
+          </a>
         </div>
       </div>
 
@@ -123,6 +152,28 @@ function PaymentContent() {
 }
 
 export default function PaymentPage({ params }) {
+  const { user } = useUser();
+
+  if (!user) {
+    const callbackUrl = encodeURIComponent(window.location.href);
+
+    return (
+      <Dialog open>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Login Required</DialogTitle>
+            <DialogDescription>You need to log in first</DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-end">
+            <Link href={`/api/auth/login?returnTo=${callbackUrl}`}>
+              <Button className="bg-blue-600 hover:bg-blue-500">Login</Button>
+            </Link>
+          </div>
+        </DialogContent>
+      </Dialog>
+    );
+  }
+
   return (
     <PricingProvider planName={params?.plan}>
       <Nav />

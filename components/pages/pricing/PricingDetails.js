@@ -22,7 +22,7 @@ export default function PricingDetails({ plan }) {
     }`,
     link: `${
       selectedPlan.name === "Custom"
-        ? "/contact-for-pricing"
+        ? "/#contact"
         : `${selectedPlan.name}/payment`
     }`,
   };
