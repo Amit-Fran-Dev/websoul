@@ -10,8 +10,22 @@ export default function PricingDetails({ plan }) {
     (p) => p.name.toLowerCase() === plan.toLowerCase()
   );
 
-  if (!selectedPlan) return <p className="text-center text-red-500">Plan not found</p>;
+  if (!selectedPlan)
+    return <p className="text-center text-red-500">Plan not found</p>;
 
+  const actionPlan = {
+    action: selectedPlan.name,
+    actionName: `${
+      selectedPlan.name === "Custom"
+        ? "Contact for pricing"
+        : "Proceed to Payment"
+    }`,
+    link: `${
+      selectedPlan.name === "Custom"
+        ? "/contact-for-pricing"
+        : `${selectedPlan.name}/payment`
+    }`,
+  };
   return (
     <div className="max-w-6xl mx-auto py-12 px-4">
       {/* Header */}
@@ -19,12 +33,12 @@ export default function PricingDetails({ plan }) {
         <span className="flex text-3xl md:text-3xl justify-between">
           <h1 className="uppercase font-bold font-eraBold">
             <span className="tracking-wider text-black font-eraBold">
-              {selectedPlan.name}
+              {actionPlan.action}
             </span>{" "}
             PLANS
           </h1>
           <h3 className="uppercase font-bold font-eraBold">
-            {selectedPlan.name !== "Custom" && (
+            {actionPlan.action !== "Custom" && (
               <>
                 <span className="mr-2">&#8377;</span>
                 {selectedPlan.price}/-
@@ -32,7 +46,9 @@ export default function PricingDetails({ plan }) {
             )}
           </h3>
         </span>
-        <p className="text-muted-foreground max-w-2xl">{selectedPlan.description}</p>
+        <p className="text-muted-foreground max-w-2xl">
+          {selectedPlan.description}
+        </p>
       </div>
 
       {/* Features */}
@@ -49,13 +65,12 @@ export default function PricingDetails({ plan }) {
         ))}
       </div>
 
-      {/* Proceed to Payment */}
       <div className="flex justify-center mt-6">
         <Button
           className="bg-blue-500 text-white rounded-md font-semibold hover:bg-blue-600 transition duration-300"
-          onClick={() => router.push(`${selectedPlan.name}/payment`)}
+          onClick={() => router.push(actionPlan.link)}
         >
-          Proceed to Payment
+          {actionPlan.actionName}
         </Button>
       </div>
     </div>

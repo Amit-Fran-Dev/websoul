@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import SmoothScrolling from "@/lib/Lenis";
 import { DM_Sans } from "next/font/google";
 import { twMerge } from "tailwind-merge";
+import {PaymentProvider} from "@/contexts/paymentProvider"
 // import Nav from "@/components/comp/Nav";
 // import Footer from "@/components/comp/Footer";
 
@@ -32,10 +33,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={twMerge(dmSans.className,'md:pt-50 bg-white antialiased')}
+        className={twMerge(dmSans.className, "md:pt-50 bg-white antialiased")}
       >
-        <SmoothScrolling>
-          {children}</SmoothScrolling>
+        <PaymentProvider>
+          <SmoothScrolling>{children}</SmoothScrolling>
+        </PaymentProvider>
       </body>
     </html>
   );

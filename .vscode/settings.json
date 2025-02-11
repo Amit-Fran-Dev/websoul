@@ -15,7 +15,8 @@
         "next.config.mjs": true,
         "next-env.d.ts": true,
         "README.md": true,
-        "tsconfig.json": true
+        "tsconfig.json": true,
+        "app/favicon.svg": true
     },
     "hide-files.files": [
         "node_modules",
@@ -27,7 +28,8 @@
         "next.config.mjs",
         "next-env.d.ts",
         "README.md",
-        "tsconfig.json"
+        "tsconfig.json",
+        "app/favicon.svg"
     ],
     "workbench.sideBar.location": "right",
     "workbench.activityBar.iconClickBehavior": "toggle",

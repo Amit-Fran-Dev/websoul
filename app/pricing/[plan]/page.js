@@ -1,5 +1,5 @@
 "use client";
-import { PricingProvider, usePricing } from "@/components/pages/pricing/pricingContext";
+import { PricingProvider, usePricing } from "@/contexts/pricingContext";
 import Footer from "@/components/comp/Footer";
 import Nav from "@/components/comp/Nav";
 import PricingDetails from "@/components/pages/pricing/PricingDetails";

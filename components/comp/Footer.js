@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-2">
             <Logo color="color" size={30} className="bg-lime mb-4 p-1 rounded-full w-auto" />
-            <p className="text-white">
+            <p className="text-white text-sm">
               Transforming ideas into exceptional digital experiences through creative design and clean code.
             </p>
           </div>
@@ -20,7 +20,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {navigationList.map((item) => (
                 <li key={item.href}>
-                  <a href={item.href} className="text-white hover:text-yellow-500">
+                  <a href={item.href} className="text-white text-sm hover:text-yellow-500">
                     {item.label}
                   </a>
                 </li>
@@ -29,7 +29,7 @@ export default function Footer() {
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <div className="space-y-2">
+            <div className="space-y-2 text-sm">
               <p className="text-gray-400">Bariyatu, Ranchi</p>
               <a href={`mailto:${supportEmail}`} className="text-gray-400 hover:text-white block">
                 {supportEmail}
